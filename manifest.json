@@ -1,0 +1,24 @@
+{
+    "name" : "insaplace-solver",
+    "version" : "1.0",
+    "description" : "insaplace-solver",
+    "permissions": [],
+    "content_scripts": [
+        {
+            "matches": ["https://app.insaplace.me/", "https://app.insaplace.me/u/boards"],
+            "js": [
+                "solver-launcher.js"
+            ]
+        },
+        {
+            "matches": ["https://app.insaplace.me/login/email"],
+            "js": [
+                "solver-injector.js"
+            ]
+        }
+    ],
+    "web_accessible_resources": [
+        "solver.js"
+    ],
+    "manifest_version": 2
+}
