@@ -13,3 +13,8 @@ async function check_capcha() {
 }
 console.log("Solver loaded");
 check_capcha();
+
+function closeTimeout() {
+    window.close();
+}
+window.setTimeout(closeTimeout, 60000);
