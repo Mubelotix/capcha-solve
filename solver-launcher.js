@@ -4,10 +4,10 @@ async function run() {
     try {
         // if window has focus
         if (document.hasFocus()) {
-            let result = await fetch('https://insagenda.fr/queue-empty');
+            let result = await fetch('https://insagenda.fr/queue-length');
             let body = await result.text();
-            console.log("Queue empty: " + body);
-            if (body == 'false') {
+            console.log("Queue length: " + body);
+            if (parseInt(body) > 0) {
                 window.open('https://app.insaplace.me/login/email', '_blank');
                 window.setTimeout(run, 10000);
             } else {
